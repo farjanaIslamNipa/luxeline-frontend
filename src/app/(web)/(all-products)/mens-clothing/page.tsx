@@ -10,9 +10,9 @@ const MensClothing = async({searchParams} : {searchParams: Record<string, unknow
   let url;
 
   if(category){
-    url = `http://localhost:5000/api/v1/products?category=${category}`
+    url = `https://luxe-line-server.vercel.app/api/v1/products?category=${category}`
   }else {
-    url = 'http://localhost:5000/api/v1/products'
+    url = 'https://luxe-line-server.vercel.app/api/v1/products'
   }
 
   const res = await fetch(url, {

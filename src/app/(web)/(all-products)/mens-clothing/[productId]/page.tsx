@@ -9,7 +9,7 @@ interface TProductId {
 
 
 const SingleProduct = async({params} : TProductId) => {
-  const res = await fetch(`http://localhost:5000/api/v1/products/${params.productId}`, {
+  const res = await fetch(`https://luxe-line-server.vercel.app/api/v1/products/${params.productId}`, {
   next: {
     revalidate: 30
   }
