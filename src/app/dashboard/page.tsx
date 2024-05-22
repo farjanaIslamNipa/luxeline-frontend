@@ -61,7 +61,6 @@ const Dashboard = async() => {
               ))}
           </tbody>
         </table>
-
       </div>
     </div>
   );
