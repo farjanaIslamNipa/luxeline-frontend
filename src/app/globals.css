@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+  color: #2D2D2D;
+}
+
+.number-font {
+  font-family: "Open Sans", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+a{
+  transition: all 0.3s ease-in-out;
+}
+textarea {
+  resize: none;
+}
+
+.active-category{
+  background-color: aqua;
+}
+
+.custom-container {
+  @apply w-full max-w-[1400px] mx-auto px-5;
+}
+
+.section-title {
+  @apply text-2xl text-brand font-bold
+}
+
+@media (max-width: 767px) {
+  .small-device-collapse-nav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+}
+
+.container-padding {
+  @apply pt-12 md:pt-14 lg:pt-[70px] xl:pt-[100px];
+}
+.nav-item{
+  @apply h-full flex items-center hover:bg-brandLighter transition-all duration-150 hover:text-brand font-semibold px-2 capitalize
+}
+.header-carousel-card {
+  @apply bg-white p-3 lg:p-6 shadow-[0_3px_6px_rgba(0,0,0,0.16),0_3px_6px_rgba(0,0,0,0.23)] my-2 mx-2
+}
+.promotion-slider .swiper-button-next::after {
+  color: gray;
+  font-size: 30px;
+  margin-right: -6px;
+}
+.promotion-slider .swiper-button-prev::after {
+  color: gray;
+  font-size: 30px;
+  margin-left: -6px;
+}
+
+.promotion-slider-title {
+  @apply text-lg lg:text-xl font-semibold mt-1
+}
+
+.category-card{
+  @apply cursor-pointer relative overflow-hidden
+}
+
+.category-card-hover-content {
+  @apply absolute bg-gray-950 h-full w-full top-0 bg-opacity-70 flex justify-center items-center opacity-0 transition-all delay-100 duration-300 ease-in-out
+}
+
+.category-card:hover .category-card-hover-content{
+  @apply opacity-100
+}
+.category-img{
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
+}
+.category-card:hover .category-img{
+  -moz-transform: scale(1.2) rotate(0deg);
+  -webkit-transform: scale(1.2) rotate(0deg);
+  -o-transform: scale(1.2) rotate(0deg);
+  -ms-transform: scale(1.2) rotate(0deg);
+  transform: scale(1.2) rotate(0deg);
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  -ms-transition: 0.8s;
+  transition: 0.8s;
+}
+.flash-sale-card{
+  box-shadow: 0 0 3px rgba(34, 34, 34, 0.12), 0 1px 2px rgba(32, 32, 32, 0.24);
+}
+.trending-product-card {
+  @apply bg-brandLighter
+}
+.flash-sale-bg{
+  background-image: url('../assets//general/flash-sale.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 100px;
+}
+
+@media(max-width:1023px){
+  .flash-sale-bg{
+    background-position: right 30px center;
+  }
+}
+@media(max-width:650px){
+  .flash-sale-bg{
+    background-image: none;
+    height: auto;
+  }
+}
