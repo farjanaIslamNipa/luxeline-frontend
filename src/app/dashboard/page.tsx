@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 const Dashboard = async() => {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
+  const res = await fetch("http://localhost:5000/api/v1/products",{
     next: {
       revalidate: 30
     }

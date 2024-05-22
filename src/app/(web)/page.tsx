@@ -5,7 +5,7 @@ import TrendingNow from "@/components/home/TrendingNow";
 
 
 export default async function Home() {
-  const res = await fetch("http://localhost:5000/api/v1/products", {
+  const res = await fetch("http://localhost:5000/api/v1/products",{
     next: {
       revalidate: 30
     }
