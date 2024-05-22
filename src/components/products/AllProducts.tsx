@@ -1,13 +1,17 @@
 'use client'
 import {TProduct} from "@/types";
-import {Checkbox} from "../ui/checkbox";
 import ProductCard from "../cards/ProductCard";
 import {useEffect, useState} from "react";
 import RatingCheckbox from "../ui/RatingCheckbox";
 import CategoryCheckbox from "../ui/CategoryCheckbox";
 import PriceRangeCheckbox from "../ui/PriceRangeCheckbox";
 
-const AllProducts = ({productData} : {productData: TProduct[]}) => {
+type TProductProps = {
+  productData: TProduct[];
+  categoryParam: any;
+}
+
+const AllProducts = ({productData, categoryParam} : TProductProps) => {
   const [products, setProducts] = useState<TProduct[] | null>()
   const [price, setPrice] = useState<string | null>()
   const [category, setCategory] = useState<string | null>()
@@ -63,9 +67,9 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     setProducts(productData)
   }, [productData])
 
+  // rating filtering
   useEffect(() => {
     if(rating){
-   
       const ratingFilteredProducts = productData?.filter(product => product?.rating === rating)
       setProducts(ratingFilteredProducts)
     }else{
@@ -73,6 +77,7 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     }
   }, [productData, rating])
 
+  // category filtering
   useEffect(() => {
     if(category){
       const categoryFilteredProducts = productData?.filter(product => product?.category === category)
@@ -83,6 +88,7 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
   }, [productData, category])
 
 
+  // price filtering
   useEffect(() => {
     if(price){
       const [minPrice, maxPrice] = price.split('-').map(Number);
@@ -100,7 +106,7 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
     <div className="flex">
     <div className="bg-gray-100 min-w-[300px] p-5">
     <div className="space-y-5">
-      <div className="bg-white p-4 rounded-lg">
+      <div className={`${categoryParam ? 'hidden' : 'block'} bg-white p-4 rounded-lg`}>
         <p className="text-lg font-semibold">Category</p>
         <div className="space-y-3">
           <CategoryCheckbox category={category} categoryValue="" handleFilterCategory={handleFilterCategory} />
@@ -150,7 +156,10 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
         </div>
         :
         <div className="h-[40vh] flex justify-center items-center">
-          <p className="text-center py-5 font-bold text-3xl text-red-700">No item found !</p>
+          {
+
+products?.length! === 0 && <p className="text-center py-5 font-bold text-3xl text-red-700">No item found !</p>
+          }
         </div>
       }
     </div>

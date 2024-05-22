@@ -12,7 +12,6 @@ export default async function Home() {
   })
   const rawText = await res.text();
 
-  // Parse the JSON
   const { data: products } = JSON.parse(rawText);
 
   return (

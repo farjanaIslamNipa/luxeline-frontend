@@ -1,7 +1,3 @@
-import FilteringSidebar from "@/components/products/FilteringSidebar";
-import ProductCard from "@/components/cards/ProductCard";
-import {TProduct} from "@/types";
-import ProductsSection from "@/components/products/ProductsSection";
 import AllProducts from "@/components/products/AllProducts";
 
 const MensClothing = async({searchParams} : {searchParams: Record<string, unknown>}) => {
@@ -24,7 +20,7 @@ const MensClothing = async({searchParams} : {searchParams: Record<string, unknow
 
   return (
     <div className="custom-container pt-5 pb-10">
-      <AllProducts productData={products} />
+      <AllProducts productData={products} categoryParam={category} />
     </div>
   );
 };
