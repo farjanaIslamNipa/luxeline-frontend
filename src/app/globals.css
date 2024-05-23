@@ -199,7 +199,7 @@ textarea {
 }
 
 .sidebar-label-container{
-  @apply relative pl-[35px] mb-3 cursor-pointer
+  @apply relative pl-7 lg:pl-[35px] mb-3 cursor-pointer
 }
 
 .sidebar-label-container {

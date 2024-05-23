@@ -26,7 +26,7 @@ useEffect(() => {
         </div>
       </div>
       :
-      <p className="py-5 text-center">No item found</p>
+      <p className="py-5 text-center text-5xl text-red-500">No item found</p>
       }
     </>
   );

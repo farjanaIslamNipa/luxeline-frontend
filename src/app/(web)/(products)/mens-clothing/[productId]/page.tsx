@@ -18,8 +18,8 @@ const SingleProduct = async({params} : TProductId) => {
   const { data:product }= await res.json()
 
   return (
-    <div className="custom-container pt-10 pb-10">
-      <div className="grid grid-cols-2 gap-x-8">
+    <div className="custom-container pt-0 md:pt-10 pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="">
           <Gallery images={product.images} />
         </div>

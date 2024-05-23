@@ -3,7 +3,7 @@ const ProductsSection = ({result} : {result:any}) => {
   return (
    <div>
     {
-      result.length > 0 ?  <div className="grid grid-cols-3 gap-4">
+      result.length > 0 ?  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {result}
      </div>
      :

@@ -31,14 +31,12 @@ const AllProducts = ({productData} : {productData: TProduct[]}) => {
 
   const result = filteredProducts(productData, selectedCategory)
 
-  console.log(result, 'result')
-
   return (
     <div className="flex">
-      <div className="bg-gray-100 min-w-[300px] p-5">
+      <div className="bg-gray-100 min-w-[160px] lg:min-w-[300px] pl-2 lg:pl-5 py-2 lg:py-5">
         <FilteringSidebar handleChange={handleChange} />
       </div>
-      <div className="p-4 flex-1 bg-gray-100">
+      <div className="p-2 lg:p-5 flex-1 bg-gray-100">
         <ProductsSection result={result} />
       </div>
     </div>

@@ -21,7 +21,7 @@ const MensClothing = async({searchParams} : {searchParams: Record<string, unknow
   const { data:products }= await res.json()
 
   return (
-    <div className="custom-container pt-5 pb-10">
+    <div className="custom-container pt-0 lg:pt-5 pb-10">
       <AllProducts productData={products} />
     </div>
   );
