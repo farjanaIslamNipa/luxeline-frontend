@@ -197,3 +197,58 @@ textarea {
     height: auto;
   }
 }
+
+.sidebar-label-container{
+  @apply relative pl-[35px] mb-3 cursor-pointer
+}
+
+.sidebar-label-container {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkmark{
+  @apply absolute top-0 left-0 h-5 w-5 bg-[#eee] rounded-full
+}
+
+.sidebar-label-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.sidebar-label-container input:checked ~ .checkmark {
+  background-color: #393a3a;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.sidebar-label-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.sidebar-label-container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.sidebar-scroll::-webkit-scrollbar {
+  width: 7px;
+
+}
+ 
+.sidebar-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+}

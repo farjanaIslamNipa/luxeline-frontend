@@ -1,4 +1,6 @@
+
 import AllProducts from "@/components/products/AllProducts";
+
 
 const MensClothing = async({searchParams} : {searchParams: Record<string, unknown>}) => {
   const category = searchParams.category;
@@ -20,7 +22,7 @@ const MensClothing = async({searchParams} : {searchParams: Record<string, unknow
 
   return (
     <div className="custom-container pt-5 pb-10">
-      <AllProducts productData={products} categoryParam={category} />
+      <AllProducts productData={products} />
     </div>
   );
 };

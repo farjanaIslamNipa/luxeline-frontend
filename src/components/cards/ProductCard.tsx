@@ -7,7 +7,7 @@ const ProductCard = ({product} : {product: TProduct}) => {
   return (
     <Link href={`/mens-clothing/${product._id}`} className="flash-sale-card flex flex-col justify-between relative">
       <div className="w-full relative h-[300px] bg-brandLighter">
-        <Image src={product.images[0]} fill alt="Flash Sale" className="mx-auto object-cover" />
+        <Image src={product.images[0]} fill alt="Luxeline Product" className="mx-auto object-cover" />
       </div>
       <div className="px-2 pb-5">
         <p className="font-semibold mt-4 mb-1 text-brand leading-5">{product.title}</p>
